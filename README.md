@@ -9,7 +9,7 @@ The purpose of this analysis is to create a binary classifier model that is capa
 #### Data Preprocessing
 
 - Target variable for the model:
-- The IS_SUCCESSFUL column, which answers: “Was the money used effectively?”
+	- The IS_SUCCESSFUL column, which answers: “Was the money used effectively?”
 
 - Feature variables for the model:
 	- Columns:
@@ -34,15 +34,15 @@ The purpose of this analysis is to create a binary classifier model that is capa
 - Number of layers, neurons, and activation functions that were selected for the neural network model:
 	- Layers: There were 3 hidden layers in addition to the input and output layers
 	- Neurons: 180 neurons in total, split between the 3 hidden layers accordingly: 80, 60, 40
-	- Activation Functions: RELU
+	- Activation Function: RELU
 
 - Why the above numbers and functions were chosen:
 	- Layers: There were originally only 2 layers in a model that would not achieve more than 72% accuracy. A Third was added to help increase this accuracy number. The data set is not particularly complex or humongous, so 3 layers were enough to provide the desired results.
 	- Neurons: The first layer was approximately twice that of the input neurons, with additional layers decreasing to help lower run time and increase accuracy.
 	- Activation Functions: RELU was chosen for the main layers due to its ability to simplify the output. Originally, Sigmoid was chosen as the output function so it would give the result between 0 and 1, which is aligns with the IS_SUCCESSFUL target column and gives the model 100% accuracy, however I changed it to RELU to decrease the amount of loss experienced without sacrificing much accuracy.
-		- Sigmoid Output Activation Function Loss/Accuracy
+		- Sigmoid Output Activation Function Loss/Accuracy (not used):
 		- ![sigmoid_output_stats](https://user-images.githubusercontent.com/105808695/197036791-b5887ee5-b49f-4cae-9d5a-2dd17fc98c69.png)
-		- RELU Output Activation Function Loss/Accuracy
+		- RELU Output Activation Function Loss/Accuracy (used):
 		- ![RELU_output_stats](https://user-images.githubusercontent.com/105808695/197036756-dd7c6d9a-4180-4697-973e-f77cf185940f.png)
 
 - Target model performance was able to be achieved, as seen above with the use of the RELU Output Activation Function
@@ -59,7 +59,7 @@ The purpose of this analysis is to create a binary classifier model that is capa
       - ![ask_amt_binned](https://user-images.githubusercontent.com/105808695/197036864-12bf79a1-6891-46f4-8001-6a30445c85ad.png)
 	- Added 20 more nodes to hidden nodes layer 2
       - This was done to help increase model accuracy
-	- Added third hidden layer, with 40 hidden nodes
+	- Added a third hidden layer, with 40 hidden nodes
       - This was done to help increase model accuracy
 	- Output layer activation function changed from "Sigmoid" to "RELU"
       - As explained above, this helped to decrease the amount of loss seen in the model 
